@@ -34,7 +34,7 @@ export const useStore = create<PlayerState>((set, get) => {
 
     load: async () => {
       set({ isLoading: true });
-      const response = await api.get("/courses/1");
+      const response = await api.get("courses/1");
 
       set({ course: response.data, isLoading: false });
     },
