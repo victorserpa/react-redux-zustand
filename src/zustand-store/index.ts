@@ -35,8 +35,9 @@ export const useStore = create<PlayerState>((set, get) => {
     load: async () => {
       set({ isLoading: true });
       const response = await api.get("/coursers/1?key=7f0b9830");
+      console.log(response.data.courses[0]);
 
-      set({ course: response.data, isLoading: false });
+      set({ course: response.data.courses[0], isLoading: false });
     },
 
     play: (moduleAndLessonIndex: [number, number]) => {
